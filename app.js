@@ -1,5 +1,3 @@
-const CreateBoard = require("./js/CreateBoard")
-
 class LifeGame {
     constructor(rows, columns) {
         this.rows = rows;
