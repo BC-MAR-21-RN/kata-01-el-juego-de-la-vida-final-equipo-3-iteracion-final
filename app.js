@@ -1,5 +1,7 @@
 const CreateBoard = require("./js/CreateBoard")
 const AddNeighbors = require("./js/AddNeighbor")
+const PrintBoard = require('./js/PrintBoard')
+const RecalculateTable = require('./js/RecalculateTable')
 class LifeGame {
     constructor(rows, columns) {
         this.rows = rows;
@@ -32,7 +34,9 @@ class LifeGame {
         this.cols = cols
         this.board = CreateBoard(this.rows, this.cols)
         this.board = AddNeighbors(this.board)
-        console.table(this.board)
+        PrintBoard(this.board);
+        this.board = RecalculateTable(this.board)
+        PrintBoard(this.board)
     }
 
 
