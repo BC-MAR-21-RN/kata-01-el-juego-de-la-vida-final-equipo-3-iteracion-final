@@ -1,3 +1,5 @@
+const CreateBoard = require("./js/CreateBoard")
+
 class LifeGame {
     constructor(rows, columns) {
         this.rows = rows;
@@ -18,14 +20,21 @@ class LifeGame {
             rl.question('INGRESA COLUMNAS :', (numberColumns) => {
                 this.columns = numberColumns
 
- 
+                this.Iteration(this.rows, this.columns)
                 rl.close();
             });
         });
     }
  
     
-
+    Iteration(rows, cols) {
+        this.rows = rows
+        this.cols = cols
+        this.board = CreateBoard(this.rows, this.cols)
+    console.table(this.board)
+    
+    }
+    
 
 }
 
