@@ -7,11 +7,5 @@ describe("Generate a random number", () => {
         expect(GenerateRandom(number)).toEqual(output)
 
     })
-    test("it should generate a random number", () => {
-
-        const number = 2
-        const output = expect.any(Number)
-        expect(GenerateRandom(number)).toEqual(output)
-
-    })
+    
 })

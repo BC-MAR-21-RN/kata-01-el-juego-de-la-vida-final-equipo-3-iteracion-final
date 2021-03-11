@@ -1,5 +1,5 @@
 const CreateBoard = require("./js/CreateBoard")
-
+const AddNeighbors = require("./js/AddNeighbor")
 class LifeGame {
     constructor(rows, columns) {
         this.rows = rows;
@@ -13,10 +13,10 @@ class LifeGame {
             output: process.stdout
         });
 
-       
+
 
         rl.question('INGRESA FILAS :', (numberRows) => {
-           this.rows = numberRows
+            this.rows = numberRows
             rl.question('INGRESA COLUMNAS :', (numberColumns) => {
                 this.columns = numberColumns
 
@@ -25,16 +25,16 @@ class LifeGame {
             });
         });
     }
- 
-    
+
+
     Iteration(rows, cols) {
         this.rows = rows
         this.cols = cols
         this.board = CreateBoard(this.rows, this.cols)
-    console.table(this.board)
-    
+        this.board = AddNeighbors(this.board)
+        console.table(this.board)
     }
-    
+
 
 }
 
